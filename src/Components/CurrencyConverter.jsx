@@ -25,12 +25,12 @@ export default class CurrencyConverter extends Component {
 	}
 
   render() {
-    const currencyList = currencyData.map((currency, i) => <option key={i} value={i}>{currency.name}</option>);
+    const currencyList = currencyData.map((currency, i) => <option key={currency.id} value={i}>{currency.name}</option>);
 
     return (
       <div>
         <select onChange={this.handleOptionSelect} value={this.state.selectedCurrency}>
-          <option value='Select Currency'>Select Currency</option>
+          <option disabled>Select Currency</option>
           {currencyList}
         </select>
 
